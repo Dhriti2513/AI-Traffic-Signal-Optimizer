@@ -39,5 +39,3 @@ An AI-powered traffic signal optimization system that uses real-time video feeds
 - [ ] Deploy demo video and documentation  
 
 ---
-
-## 📂 Repository Structure (Planned)
