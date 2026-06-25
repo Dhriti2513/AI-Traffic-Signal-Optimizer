@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Traffic Control Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="h-full">
+
+  <!-- Theme Toggle -->
+  <div class="fixed top-4 right-4">
+    <button id="theme-toggle" class="px-4 py-2 bg-cyan-500 text-white rounded-lg">
+      Toggle Theme
+    </button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-4 left-4 space-x-2">
+    <button onclick="loadSlide('slides/dashboard_1.html')">Dashboard</button>
+    <button onclick="loadSlide('slides/traffic_map_2.html')">Traffic Map</button>
+    <button onclick="loadSlide('slides/ai_engine_3.html')">AI Engine</button>
+    <button onclick="loadSlide('slides/alert_4.html')">Alerts</button>
+      <button onclick="loadSlide('slides/analytics_5.html')">Analytics</button>
+    <button onclick="loadSlide('slides/control_room6.html')">Control Room</button>
+  </nav>
+
+  <!-- Slide Container -->
+  <div id="slide-container" class="h-screen overflow-auto pt-16">
+    <!-- Default slide will load here -->
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+  <script src="traffic_map.js"></script>
+</body>
+</html>

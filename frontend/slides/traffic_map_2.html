@@ -1,0 +1,75 @@
+<section class="p-6">
+  <!-- Header -->
+  <div class="flex justify-between items-start mb-4">
+    <div>
+      <h1 id="map-title" class="text-2xl font-bold text-gray-900">LIVE TRAFFIC MAP</h1>
+      <p id="subtitle" class="text-gray-500 text-sm">Real-time intersection monitoring</p>
+    </div>
+
+    <!-- Legend -->
+    <div class="bg-white rounded-xl p-4 border border-pink-100 shadow-sm">
+      <p class="text-xs text-gray-600 uppercase tracking-wider mb-3 font-semibold">Traffic Conditions</p>
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          <span class="text-gray-700 text-xs">Clear</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-orange-400"></div>
+          <span class="text-gray-700 text-xs">Moderate</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <span class="text-gray-700 text-xs">Heavy</span>
+        </div>
+        <div class="flex items-center gap-2 mt-1 pt-1 border-t border-pink-100">
+          <div class="w-2 h-2 rounded-full bg-pink-500"></div>
+          <span class="text-gray-700 text-xs">Vehicles</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Area -->
+  <div class="relative rounded-xl overflow-hidden border border-pink-100" style="height: 400px;">
+    <!-- Roads -->
+    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+      <line x1="50" y1="100" x2="750" y2="100" stroke="#e5d5f5" stroke-width="3" />
+      <line x1="50" y1="250" x2="750" y2="250" stroke="#e5d5f5" stroke-width="3" />
+      <line x1="50" y1="400" x2="750" y2="400" stroke="#e5d5f5" stroke-width="3" />
+      <line x1="150" y1="50" x2="150" y2="450" stroke="#e5d5f5" stroke-width="3" />
+      <line x1="350" y1="50" x2="350" y2="450" stroke="#e5d5f5" stroke-width="3" />
+      <line x1="550" y1="50" x2="550" y2="450" stroke="#e5d5f5" stroke-width="3" />
+    </svg>
+
+    <!-- Nodes -->
+    <div id="nodes-container" class="absolute inset-0"></div>
+
+    <!-- Vehicles -->
+    <div id="vehicles-container" class="absolute inset-0 pointer-events-none"></div>
+
+    <!-- Stats Overlay -->
+    <div class="absolute bottom-4 left-4 bg-white rounded-xl p-3 border border-pink-100 shadow-sm">
+      <div class="flex gap-6">
+        <div>
+          <p class="text-xs text-gray-500 uppercase font-semibold">Active Vehicles</p>
+          <p id="vehicle-count" class="text-xl font-bold text-pink-500">0</p>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500 uppercase font-semibold">Avg Flow Rate</p>
+          <p id="flow-rate" class="text-xl font-bold text-green-500">0%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timestamp -->
+    <div class="absolute top-4 left-4 bg-white rounded-xl px-3 py-2 border border-pink-100 shadow-sm">
+      <p class="text-xs text-gray-600">LIVE <span id="timestamp" class="text-gray-400 ml-2">--:--:--</span></p>
+    </div>
+
+    <!-- Alerts -->
+    <div id="alert-box" class="absolute top-4 right-4 hidden bg-red-100 text-red-700 px-4 py-2 rounded-lg shadow">
+      ⚠️ Heavy congestion detected!
+    </div>
+  </div>
+</section>
